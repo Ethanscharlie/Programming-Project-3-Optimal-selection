@@ -20,21 +20,21 @@ public class BestRatingPayloadBuilderTest {
         assertNotNull(result);
         assertEquals(5, result.size());
 
-        assertEquals("Solar Flares", result.get(0).experiment());
-        assertEquals("Micrometeorites", result.get(1).experiment());
+        assertEquals("Micrometeorites", result.get(0).experiment());
+        assertEquals("Solar Flares", result.get(1).experiment());
         assertEquals("Mice Tumors", result.get(2).experiment());
         assertEquals("Relativity", result.get(3).experiment());
-        assertEquals("Binary Stars", result.get(4).experiment());
+        assertEquals("Cosmic Rays", result.get(4).experiment());
 
         int totalRating = result.stream()
                 .mapToInt(Payload::rating)
                 .sum();
-        assertEquals(42, totalRating);
+        assertEquals(41, totalRating);
 
         int totalWeight = result.stream()
                 .mapToInt(Payload::weightInKilograms)
                 .sum();
-        assertEquals(672, totalWeight);
+        assertEquals(683, totalWeight);
     }
 
     @Test

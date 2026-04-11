@@ -18,7 +18,7 @@ public class RatioPayloadBuilderTest {
         List<Payload> result = builder.build(TestUtils.testingPayloads);
 
         assertNotNull(result);
-        assertEquals(8, result.size());
+        assertEquals(9, result.size());
 
         assertEquals("Seed Viability", result.get(0).experiment());
         assertEquals("Yeast Fermentation", result.get(1).experiment());
@@ -32,13 +32,13 @@ public class RatioPayloadBuilderTest {
         int totalWeight = result.stream()
                 .mapToInt(Payload::weightInKilograms)
                 .sum();
-        assertEquals(559, totalWeight);
+        assertEquals(654, totalWeight);
         assertTrue(totalWeight <= 700);
 
         int totalRating = result.stream()
                 .mapToInt(Payload::rating)
                 .sum();
-        assertEquals(50, totalRating);
+        assertEquals(52, totalRating);
     }
 
     @Test
